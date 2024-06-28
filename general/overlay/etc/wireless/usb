@@ -55,6 +55,13 @@ if [ "$1" = "rtl8733bu-gk7205v200-camhi" ]; then
 	exit 0
 fi
 
+# GK7205V300 CamHi
+if [ "$1" = "rtl8733bu-gk7205v300-camhi" ]; then
+	set_gpio 7 0
+	modprobe 8733bu
+	exit 0
+fi
+
 # GK7205V200 Kafei
 if [ "$1" = "8188fu-gk7205v200-kafei" ]; then
 	set_gpio 57 0
@@ -175,7 +182,7 @@ if [ "$1" = "rtl8188fu-ssc337de-foscam" ]; then
 fi
 
 # SSC377 Dahua
-if [ "$1" = "ssv6x5x-ssc337-dahua" ]; then
+if [ "$1" = "ssv6x5x-ssc377-dahua" ]; then
 	set_gpio 10 1
 	modprobe ssv6x5x
 	exit 0
@@ -230,10 +237,17 @@ if [ "$1" = "rtl8733bu-t31-camhipro" ]; then
 	exit 0
 fi
 
-# T31 IFlytek
+# T31 iFlytek
 if [ "$1" = "ssv6155-t31-iflytek" ]; then
 	set_gpio 10 1
 	modprobe ssv6155
+	exit 0
+fi
+
+# T31 iFlytek XFP301-M
+if [ "$1" = "rtl8188fu-t31-iflytek-xfp301m" ]; then
+	set_gpio 10 1
+	modprobe 8188fu
 	exit 0
 fi
 
